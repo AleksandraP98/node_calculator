@@ -5,11 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-  "start": "node app.js",
-  "test": "jest",
-  "unit-test": "jest __tests__/unit/unit.test.js",
-  "integration-test": "jest __tests__/integration/integration.test.js"
-},
+    "start": "node app.js",
+    "test": "./node_modules/.bin/jest"
+  },
   "author": "Patrik Nygren",
   "license": "ISC",
   "dependencies": {
