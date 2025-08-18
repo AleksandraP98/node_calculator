@@ -1,5 +1,5 @@
-const request = require('supertest');
-const app = require('../../app'); // din Express-app
+import request from 'supertest';
+import app from '../../app.js'; // din Express-app
 
 describe("Integration Tests - Numbercruncher API", () => {
   test("GET /add?x=5&y=3 => 8", async () => {

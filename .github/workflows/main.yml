@@ -15,8 +15,7 @@ jobs:
           node-version: 22.x
 
       - run: npm install
-      - run: npm run unit-test
-     
+      - run: npm test
 
   publish-npm:
     needs: build
@@ -30,7 +29,8 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - run: npm install
-      - run: npm run unit-test
+      - run: npm test
+
         
 
 
