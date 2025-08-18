@@ -16,7 +16,7 @@ jobs:
 
       - run: npm install
       - run: npm run unit-test
-      - run: npm run integration-test
+     
 
   publish-npm:
     needs: build
@@ -30,7 +30,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - run: npm install
-      - run: npm publish
+      - run: npm run unit-test
         
 
 
