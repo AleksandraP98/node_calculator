@@ -5,10 +5,10 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "node app.js",
-    "test": "jest",
-    "unit-test": "jest __tests__/unit/unit.test.js",
-    "integration-test": "jest __tests__/integration/integration.test.js"
+    "start": "node server.js",
+    "test": "npx jest",
+    "unit-test": "npx jest __tests__/unit/unit.test.js",
+    "integration-test": "npx jest __tests__/integration/integration.test.js"
   },
   "author": "Patrik Nygren",
   "license": "ISC",
