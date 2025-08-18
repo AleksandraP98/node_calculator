@@ -1,36 +1,39 @@
-name: Node.js Package
+name: CI
 
 on:
-  release:
-    types: [created]
+  push:
+  pull_request:
 
 jobs:
   build:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: 22.x
-
+          cache: "npm"
       - run: npm install
-      - run: npm test
 
-  publish-npm:
-    needs: build
+  unit-tests:
     runs-on: windows-latest
+    needs: build
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: 22.x
-          registry-url: https://registry.npmjs.org/
+          cache: "npm"
+      - run: npm run unit-test
+      
 
-      - run: npm install
-      - run: npm test
-
-        
-
-
+  integration-tests:
+    runs-on: windows-latest
+    needs: unit-tests
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.x
+          cache: "npm"
+      - run: npm run integration-test

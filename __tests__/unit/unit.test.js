@@ -1,6 +1,6 @@
-const gcd = require('../../src/gcd');
-const exp = require('../../src/exp');
-const percentage = require('../../src/percentage');
+import gcd from '../../src/gcd.js';
+import exp from '../../src/exp.js';
+import percentage from '../../src/percentage.js';
 
 describe("Unit Tests - gcd module", () => {
   test("gcd of 12 and 8 is 4", () => {

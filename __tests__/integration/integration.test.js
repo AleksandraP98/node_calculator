@@ -1,5 +1,5 @@
 import request from 'supertest';
-import app from '../../app.js'; // din Express-app
+import app from '../../app.js'; 
 
 describe("Integration Tests - Numbercruncher API", () => {
   test("GET /add?x=5&y=3 => 8", async () => {
