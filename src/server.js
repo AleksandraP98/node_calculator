@@ -1,12 +1,7 @@
-import express from 'express';
-import index from './modules/index.js';
-import calculator from './modules/calculator.js';
+import app from './app.js';
 
-const app = express();
+const PORT = process.env.PORT || 3000;
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
-app.use('/', index);
-app.use('/calculator', calculator);
-
-export default app;
+app.listen(PORT, () => {
+  console.log(`Calculator live on localhost:${PORT}`);
+});
